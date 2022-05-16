@@ -1,6 +1,6 @@
 ```shell
 # 部署应用
-kubectl apply -f nginx-deployment.yaml
+kubectl apply -f foo-deployment.yaml
 
 # 查看deployment
 kubectl get deployment
@@ -11,8 +11,8 @@ kubectl get pods
 # 查看pod详情
 kubectl describe pod pod-name
 
-# 把集群内端口映射到节点
-kubectl port-forward pod-name 8080:80
+# 转发端口到本地5678
+kubectl port-forward pod-name 5678:5678
 
 # 查看pod的日志
 kubectl logs -f pod-name
@@ -21,16 +21,19 @@ kubectl logs -f pod-name
 kubectl exec -it pod-name -- bash
 
 # 伸缩扩展副本
-kubectl scale deployment nginx-deployment --replicas=3
+kubectl scale deployment foo-deployment --replicas=3
 
-
+---
 
 # 查看历史
-kubectl rollout history deployment nginx-deployment
+kubectl rollout history deployment foo-deployment
+
 # 回到上个版本
-kubectl rollout undo deployment nginx-deployment
+kubectl rollout undo deployment foo-deployment
+
 # 回到指定版本
-kubectl rollout undo deployment nginx-deployment --to-revision=2
+kubectl rollout undo deployment foo-deployment --to-revision=2
+
 # 删除部署
-kubectl delete deployment nginx-deployment
+kubectl delete deployment foo-deployment
 ```
