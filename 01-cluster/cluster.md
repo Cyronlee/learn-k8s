@@ -3,7 +3,7 @@
 ```bash
 
 # 查看所有的context
-kubectl config use-context kind-kind
+kubectl config get-contexts
 
 # 切换到kind的context
 kubectl config use-context kind-kind
