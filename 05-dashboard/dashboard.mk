@@ -20,7 +20,7 @@ secert:
 
 token:
 # 通过secret名称查看token
-	kubectl describe secret admin-user-token-xxxxx -n kubernetes-dashboard
+	kubectl describe secret admin-user-token-dpjbg -n kubernetes-dashboard
 
 visit:
 # 访问dashboard，输入token即可访问
