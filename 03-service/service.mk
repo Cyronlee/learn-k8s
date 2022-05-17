@@ -1,6 +1,6 @@
 # 部署service
 delopy:
-	kubectl apply -f nginx-service.yaml
+	kubectl apply -f foo-service.yaml
 
 # 查看service状态
 all-services:
@@ -8,7 +8,7 @@ all-services:
 
 # 查看service详情
 service-detail:
-	kubectl describe service service-name
+	kubectl describe service foo-service
 
 # 转发端口到本地5678
 port-forward:
